@@ -1,0 +1,21 @@
+extends layout
+
+block content
+	h1 #{testdata.project}
+	hr
+	table(class="table")
+		tr(class="active")
+			td NAME
+			td VALUE
+		each data in testdata.data
+			tr
+				td #{data.name}
+				td #{data.value}
+	hr
+	form(method="POST" action="#{testdata._id}/add" class="form-inline")
+		input(type="text" name="name" placeholder="name" class="form-control")
+		input(type="number" step="any" name="value" placeholder="value" class="form-control")
+		button(type="submit" class="btn btn-success") Add entry
+	hr
+	a(href="/bar/#{testdata._id}/graph")
+		button(class="btn btn-primary") See graph

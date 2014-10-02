@@ -22,7 +22,7 @@ d3.json("json", function(error, json) {
 			.scale(y)
 			.orient("left");
 
-	var svg = d3.select("body").append("svg")
+	var svg = d3.select(".container").append("svg")
 		.attr("width", width + margin.left + margin.right)
 		.attr("height", height + margin.top + margin.bottom);
 			
